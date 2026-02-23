@@ -1,6 +1,10 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
+import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+
+const _geist = Geist({ subsets: ["latin"] })
+const _geistMono = Geist_Mono({ subsets: ["latin"] })
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
