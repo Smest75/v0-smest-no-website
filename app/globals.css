@@ -3,7 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Scandinavian minimalist color palette - warm neutral, subtle green accent, high contrast */
 :root {
   --background: oklch(0.98 0.005 90);
   --foreground: oklch(0.2 0.01 90);
