@@ -24,8 +24,8 @@ export function WhyMeSection() {
         </div>
 
         <div className="mx-auto max-w-3xl space-y-8">
-          {reasons.map((reason, index) => (
-            <div key={index} className="flex gap-4">
+          {reasons.map((reason) => (
+            <div key={reason.title} className="flex gap-4">
               <div className="flex-shrink-0">
                 <CheckCircle className="h-6 w-6 text-primary" />
               </div>

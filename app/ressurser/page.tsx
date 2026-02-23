@@ -1,8 +1,9 @@
+import type { Metadata } from "next"
 import { getAllPosts, getFeaturedPosts, getOlderPosts } from "@/lib/blog"
 import { ArticleTeaser } from "@/components/blog/article-teaser"
 import { ArticleListItem } from "@/components/blog/article-list-item"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Ressurser – Smest Rådgivning",
   description: "Artikler, guider og ressurser om praktisk bruk av kunstig intelligens for SMB-er og organisasjoner.",
 }

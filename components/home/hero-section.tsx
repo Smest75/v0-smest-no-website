@@ -1,22 +1,22 @@
 "use client"
 
 import { useEffect, useRef, useState, useCallback } from "react"
+import { siteConfig } from "@/lib/config"
 import { Canvas, useFrame } from "@react-three/fiber"
 import type * as THREE from "three"
 
+const PARTICLE_COUNT = 1000
+const positions = new Float32Array(PARTICLE_COUNT * 3)
+const scales = new Float32Array(PARTICLE_COUNT)
+for (let i = 0; i < PARTICLE_COUNT; i++) {
+  positions[i * 3] = (Math.random() - 0.5) * 20
+  positions[i * 3 + 1] = (Math.random() - 0.5) * 20
+  positions[i * 3 + 2] = (Math.random() - 0.5) * 10
+  scales[i] = Math.random()
+}
+
 function ParticleField() {
   const pointsRef = useRef<THREE.Points>(null)
-  const particleCount = 1000
-
-  const positions = new Float32Array(particleCount * 3)
-  const scales = new Float32Array(particleCount)
-
-  for (let i = 0; i < particleCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 20
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 20
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 10
-    scales[i] = Math.random()
-  }
 
   useFrame((state) => {
     if (pointsRef.current) {
@@ -28,8 +28,8 @@ function ParticleField() {
   return (
     <points ref={pointsRef}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" count={particleCount} array={positions} itemSize={3} />
-        <bufferAttribute attach="attributes-scale" count={particleCount} array={scales} itemSize={1} />
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+        <bufferAttribute attach="attributes-scale" args={[scales, 1]} />
       </bufferGeometry>
       <pointsMaterial size={0.05} color="#5a8f7b" transparent opacity={0.4} sizeAttenuation />
     </points>
@@ -54,10 +54,19 @@ function CssFallbackBackground() {
 
 function ThreeBackground({ onError }: { onError: () => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const cleanupRef = useRef<(() => void) | null>(null)
 
   const handleContextLost = useCallback(() => {
     onError()
   }, [onError])
+
+  useEffect(() => {
+    return () => {
+      if (cleanupRef.current) {
+        cleanupRef.current()
+      }
+    }
+  }, [])
 
   return (
     <div className="absolute inset-0 -z-10">
@@ -71,6 +80,7 @@ function ThreeBackground({ onError }: { onError: () => void }) {
         onCreated={({ gl }) => {
           const canvas = gl.domElement
           canvas.addEventListener("webglcontextlost", handleContextLost)
+          cleanupRef.current = () => canvas.removeEventListener("webglcontextlost", handleContextLost)
         }}
       >
         <ParticleField />
@@ -118,11 +128,11 @@ export function HeroSection() {
               Få praktisk rådgivning, 1:1-sparring og opplæring i bruk av kunstig intelligens
             </h1>
             <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-              For ledere og virksomheter  som vil bli mer effektive, forstå og implementere KI på en trygg og praktisk måte.
+              For ledere og virksomheter som vil bli mer effektive, forstå og implementere KI på en trygg og praktisk måte.
             </p>
             <div>
               <a
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0-Zjvavs0QkkZqrmAvN8LxfxIK3Vxlg4IKclDx3hANaf6CaEPHkventvJqQM6XEkbGzqVj0S3C"
+                href={siteConfig.calendarUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-medium text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-colors"

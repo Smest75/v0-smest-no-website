@@ -1,6 +1,8 @@
+import type { Metadata } from "next"
+import Image from "next/image"
 import { CheckCircle } from "lucide-react"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Om Martin Smestad Hansen – Smest Rådgivning",
   description:
     "25 års erfaring innen teknologi og kommunikasjon. Praktisk KI-rådgivning uten buzzwords, for SMB-er og organisasjoner.",
@@ -28,10 +30,11 @@ export default function OmMartinPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="relative aspect-square lg:aspect-[4/5] overflow-hidden rounded-lg bg-muted">
-              <img
+              <Image
                 src="/images/martin-portrait.jpg"
                 alt="Martin Smestad Hansen"
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
 

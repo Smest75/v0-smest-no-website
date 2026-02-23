@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { HeroSection } from "@/components/home/hero-section"
 import { ServicesSection } from "@/components/home/services-section"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
@@ -7,7 +8,7 @@ import { FaqSection } from "@/components/home/faq-section"
 import { CtaSection } from "@/components/home/cta-section"
 import { testimonials } from "@/content/testimonials"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Smest Rådgivning – Praktisk KI-rådgivning for SMB og organisasjoner",
   description:
     "Praktisk rådgivning og opplæring i bruk av kunstig intelligens for SMB-er, organisasjoner og ledere. Book en prat med Martin Smestad Hansen.",

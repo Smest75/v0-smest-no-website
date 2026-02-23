@@ -1,6 +1,7 @@
+import type { Metadata } from "next"
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Kontakt – Smest Rådgivning",
   description: "Ta kontakt med Martin Smestad Hansen for KI-rådgivning. E-post, telefon eller book en prat direkte.",
 }

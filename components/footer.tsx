@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { siteConfig } from "@/lib/config"
 
 export function Footer() {
   return (
@@ -20,18 +21,18 @@ export function Footer() {
               <p>0157 Oslo</p>
               <p className="mt-3">
                 <a
-                  href="mailto:martin@smest.no"
+                  href={`mailto:${siteConfig.email}`}
                   className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                 >
-                  martin@smest.no
+                  {siteConfig.email}
                 </a>
               </p>
               <p>
                 <a
-                  href="tel:+4792647314"
+                  href={`tel:${siteConfig.phone}`}
                   className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                 >
-                  +47 926 47 314
+                  {siteConfig.phoneDisplay}
                 </a>
               </p>
             </address>

@@ -53,7 +53,8 @@ export function getPostBySlug(slug: string): BlogPost | null {
       content,
       featured: data.featured || false,
     }
-  } catch {
+  } catch (error) {
+    console.error(`Failed to load blog post: ${slug}`, error)
     return null
   }
 }

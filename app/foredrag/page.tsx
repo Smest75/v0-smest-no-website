@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+import Image from "next/image"
 import { Check, ExternalLink } from "lucide-react"
 import {
   Accordion,
@@ -6,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Foredrag om kunstig intelligens – Smest Rådgivning",
   description:
     "Engasjerende foredrag om KI i praksis for ledere, konferanser og organisasjoner. Book Martin Smestad Hansen via Talerlisten.",
@@ -115,10 +117,11 @@ export default function ForedragPage() {
               </a>
             </div>
             <div className="relative aspect-square lg:aspect-[4/5] overflow-hidden rounded-lg bg-muted">
-              <img
+              <Image
                 src="/images/martin-portrait.jpg"
                 alt="Martin Smestad Hansen holder foredrag"
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
           </div>

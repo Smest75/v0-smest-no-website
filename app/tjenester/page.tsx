@@ -1,5 +1,12 @@
+import type { Metadata } from "next"
 import { Check } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
+export const metadata: Metadata = {
+  title: "Tjenester – Smest Rådgivning",
+  description:
+    "KI-rådgivning og opplæring for SMB-er, organisasjoner og ledere. Velg mellom Basic, Medium og Premium-pakken.",
+}
 
 const CALENDAR_URL =
   "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0-Zjvavs0QkkZqrmAvN8LxfxIK3Vxlg4IKclDx3hANaf6CaEPHkventvJqQM6XEkbGzqVj0S3C"

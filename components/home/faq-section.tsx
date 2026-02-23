@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "Hvordan starter vi et samarbeid?",
     answer:
-      "Vi starter med et møte der vi ser nærmere på behov og amibsjoner. Når vi er enige om at dette er en match bestemmer vi hvilken tjeneste eller pakke som passer best for dere nå.",
+      "Vi starter med et møte der vi ser nærmere på behov og ambisjoner. Når vi er enige om at dette er en match bestemmer vi hvilken tjeneste eller pakke som passer best for dere nå.",
   },
   {
     question: "Kan dere jobbe fysisk hos oss?",
@@ -39,7 +39,7 @@ export function FaqSection() {
         <div className="mx-auto max-w-3xl">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionItem key={faq.question} value={`item-${index}`}>
                 <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
               </AccordionItem>

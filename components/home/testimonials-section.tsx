@@ -122,9 +122,9 @@ export function TestimonialsSection({
               transform: `translateX(calc(-${currentPage * 100}% - ${currentPage * gapRem}rem))`,
             }}
           >
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <div
-                key={index}
+                key={testimonial.name}
                 className="flex-shrink-0 rounded-lg border border-border bg-card p-6 flex flex-col"
                 style={{
                   width: `calc(${itemWidthPercent}% - ${((itemsPerPage - 1) * gapRem) / itemsPerPage}rem)`,

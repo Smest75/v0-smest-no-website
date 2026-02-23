@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
+import { siteConfig } from "@/lib/config"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -30,7 +31,7 @@ export function Header() {
           "@type": "ListItem",
           position: 1,
           name: "Hjem",
-          item: "https://smest.no/",
+          item: `${siteConfig.baseUrl}/`,
         },
       ],
     }
@@ -41,7 +42,7 @@ export function Header() {
         "@type": "ListItem",
         position: index + 2,
         name,
-        item: `https://smest.no/${pathSegments.slice(0, index + 1).join("/")}`,
+        item: `${siteConfig.baseUrl}/${pathSegments.slice(0, index + 1).join("/")}`,
       })
     })
 

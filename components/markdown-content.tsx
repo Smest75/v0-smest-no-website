@@ -30,14 +30,17 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           <ol className="list-decimal list-inside mb-4 space-y-2 text-foreground/90">{children}</ol>
         ),
         li: ({ children }) => <li className="leading-relaxed">{children}</li>,
-        a: ({ href, children }) => (
-          <Link
-            href={href || "#"}
-            className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
-          >
-            {children}
-          </Link>
-        ),
+        a: ({ href, children }) =>
+          href ? (
+            <Link
+              href={href}
+              className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
+            >
+              {children}
+            </Link>
+          ) : (
+            <>{children}</>
+          ),
         blockquote: ({ children }) => (
           <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground my-6">
             {children}

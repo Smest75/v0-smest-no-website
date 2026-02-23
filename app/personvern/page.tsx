@@ -1,4 +1,6 @@
-export const metadata = {
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
   title: "Personvern og cookies – Smest Rådgivning",
   description:
     "Personvernerklæring for Smest Rådgivning. Informasjon om hvordan vi behandler personopplysninger og cookies.",
