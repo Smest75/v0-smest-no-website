@@ -1,0 +1,189 @@
+---
+title: "Fra ChatGPT til Claude – en migreringsguide"
+excerpt: "En faglig solid, praktisk guide for deg som vurderer å bytte fra ChatGPT til Claude – med tydelige forskjeller i funksjoner, arbeidsmåter og migreringssteg."
+date: "2026-03-03"
+author: "Martin Smestad Hansen"
+image: "/images/chatgpt2claude.webp"
+imageAlt: "Illustrasjon av to AI-assistenter side om side – ChatGPT og Claude"
+featured: true
+---
+
+*Foto: Kirsten Randers-Pehrson*
+
+## Hvorfor denne guiden?
+
+ChatGPT og Claude dekker mye av det samme behovet: å jobbe raskere og bedre med tekst, analyse, ideer og dokumenter.
+
+Men de er ikke like verktøy.
+
+De skiller seg spesielt på tre områder:
+
+1. **Arbeidsflate og «måten du jobber på»** (Canvas vs Artifacts, Projects)
+2. **Automasjon og agent-funksjoner** (Tasks og ChatGPT agent, Research/Deep Research)
+3. **Hva som finnes – og hva som ikke finnes** (bilde/video, deling, markedsplass)
+
+Denne artikkelen er skrevet for deg som allerede bruker ChatGPT aktivt, og som vurderer Claude – enten som erstatning eller som supplement.
+
+> Merk: Funksjoner og grenser endres ofte. Der det er relevant, er det lagt inn kildehenvisninger til OpenAI og Anthropic sine egne hjelpesider.
+
+---
+
+## 1) Først: forstå forskjellen i «produktfilosofi»
+
+### ChatGPT: bred plattform med mange moduser
+ChatGPT er lagt opp som en plattform der du finner mange ulike funksjoner i samme grensesnitt – fra redigering og dataanalyse til bildegenerering, agent-funksjoner og automatisering. (Hva du har tilgang til avhenger av abonnement.)
+[help.openai.com](https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt)
+
+### Claude: tekst- og dokumentorientert, med egen flate for «store leveranser»
+Claude er bygget rundt språk, lange sammenhenger og arbeid med dokumenter – og har et vesentlig lengre kontekstvindu enn ChatGPT, noe som er praktisk for tunge dokumenter og lange arbeidsøkter. En sentral del av Claude-opplevelsen er Artifacts – et eget panel der du får «leveranser» som kan være selvstendige dokumenter, kode eller interaktive verktøy. Baksiden er at plattformen har færre innebygde funksjoner enn ChatGPT.
+
+---
+
+## 2) Canvas vs Artifacts: likt utgangspunkt, ulik arbeidsflyt
+
+### Canvas (ChatGPT)
+OpenAI beskriver Canvas som en «interactive workspace» for å samskrive, redigere eller feilsøke sammen med ChatGPT. Poenget er at du og ChatGPT jobber i en felles, redigerbar visning av teksten. Du kan redigere direkte selv – som i Word eller Notepad – eller du kan be ChatGPT gjøre endringer for deg. ChatGPT kan for eksempel gi forslag til justeringer og markere hvilke deler av teksten forslagene hører til.
+[help.openai.com](https://help.openai.com/en/articles/9930697-what-is-the-canvas-feature-in-chatgpt-and-how-do-i-use-it)
+
+### Artifacts (Claude)
+Anthropic beskriver Artifacts som en egen flate for «substantial, standalone content» – altså innhold som står mer på egne ben enn en vanlig chatmelding. Det kan være «apps, tools, or content», og er laget for at du enkelt skal kunne iterere, videreutvikle og gjenbruke. Når du jobber med tekst kan den likne ganske mye på Canvas, men den har en kjedelig mangel: du kan ikke redigere teksten direkte selv. Enhver endring må promptes.
+[support.claude.com](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them)
+
+---
+
+## 3) Projects: likt konsept, noen praktiske forskjeller
+
+Begge plattformer lar deg opprette avgrensede arbeidsrom med egne instrukser, opplastede dokumenter og separat chathistorikk. Grunnkonseptet er det samme.
+
+### Projects (ChatGPT)
+OpenAI beskriver Projects som «smart workspaces» for å samle chatter, referansefiler og egne instrukser slik at arbeidet holder seg på sporet over tid.
+[help.openai.com](https://help.openai.com/en/articles/10169521-projects-in-chatgpt)
+
+### Projects (Claude)
+Claude beskriver Projects som «self-contained workspaces» med egen chathistorikk og «knowledge base», der du laster opp dokumenter og jobber mer avgrenset innen ett tema.
+[support.claude.com](https://support.claude.com/en/articles/9517075-what-are-projects)
+
+**Praktiske forskjeller:**
+
+Claudes kontekstvindu er 200 000 tokens mot ChatGPTs 128 000. I praksis betyr det at du kan laste opp mer materiale og at Claude husker lengre samtalehistorikk innen et prosjekt.
+
+ChatGPT Projects støtter bildegenerering direkte i prosjektkonteksten – du kan for eksempel be den lage infografikk basert på dokumenter du har lastet opp. Det kan ikke Claude.
+
+Filgrensene varierer mellom plattformene og endres jevnlig, så det er verdt å sjekke gjeldende grenser før du setter opp et dokumenttungt prosjekt.
+
+---
+
+## 4) Memory: hva flytter du faktisk?
+
+### ChatGPT Memory
+OpenAI er tydelig på at du styrer Memory: du kan slette enkeltminner, tømme alt eller slå av Memory. Du kan også bruke Temporary Chat for å unngå at samtalen bruker eller oppdaterer Memory.
+[help.openai.com](https://help.openai.com/en/articles/8590148-memory-faq)
+
+### Claude Memory + import
+Claude har tilsvarende Memory-kontroll som ChatGPT: du kan slette enkeltminner, tømme alt, slå av Memory, eller bruke Incognito-samtaler for å unngå at samtalen bruker eller oppdaterer Memory.
+
+Anthropic tilbyr et importverktøy ([claude.com/import-memory](https://claude.com/import-memory)) der du først henter ut en strukturert minne-tekst fra ChatGPT og deretter importerer den i Claude. Claude kan bruke opptil 24 timer på å bearbeide minnet.
+
+**Viktig å vite før du migrerer:**
+- Du flytter ikke samtalehistorikk.
+- Du flytter heller ikke «alt ChatGPT har lært implisitt» fra historikk – du flytter først og fremst det som er eksplisitt representert i minnet og instruksene dine.
+
+---
+
+## 5) Deep Research, Web Search, Tasks og ChatGPT agent: fire ulike ting
+
+Dette er området mange blander.
+
+### Web Search
+Begge kan søke på nettet (med ulike detaljer i utførelse og tilgjengelighet).
+
+### Deep Research (ChatGPT)
+OpenAI beskriver Deep Research som en funksjon som kan «reason, research, and synthesize … into a documented report», og at den kan bruke både opplastede filer, web og eventuelt tilkoblede «apps».
+[help.openai.com](https://help.openai.com/en/articles/10500283-deep-research-faq)
+
+### Research (Claude)
+Anthropic beskriver Research som en agentisk funksjon der Claude kjører flere søk som bygger på hverandre, bestemmer selv hva den skal undersøke videre, og leverer et grundig svar med kildehenvisninger. Den søker både på nettet og i intern kontekst – som Gmail, Google Calendar og Google Docs hvis du har koblet til disse. Research aktiveres med en egen knapp nederst til venstre i chat-grensesnittet, og er tilgjengelig for betalte brukere (Pro, Max, Team og Enterprise).
+[support.claude.com](https://support.claude.com/en/articles/11088861-using-research-on-claude)
+
+**En praktisk forskjell:** I Claude velger du selv hvilken underliggende modell som brukes i Research-sesjonen. ChatGPT velger modell automatisk.
+
+### Tasks (ChatGPT)
+OpenAI beskriver Tasks som automatiserte prompts der ChatGPT kan kjøre jobber for deg og «proactively reach out to you», for eksempel daglige oppsummeringer eller påminnelser.
+[help.openai.com](https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt)
+
+### ChatGPT agent
+OpenAI beskriver ChatGPT agent som en funksjon som kan navigere på nettsteder, fylle ut skjemaer og gjøre handlinger på dine vegne – med «visual browser» – samtidig som du beholder kontroll.
+[help.openai.com](https://help.openai.com/en/articles/11752874-chatgpt-agent)
+
+**Kort sagt:**
+- Deep Research / Research = strukturert research-rapport (begge plattformer)
+- Tasks = planlagt/repeterende automatisering (kun ChatGPT)
+- ChatGPT agent = handlinger på nett, skjemaer, arbeidsoppgaver (kun ChatGPT)
+- Web Search = vanlig nettsøk i samtalen (begge plattformer)
+
+Det betyr at Claude ikke har direkte «én-til-én» erstatning for Tasks og ChatGPT agent – men Research-funksjonen er et reelt motstykke til ChatGPT Deep Research.
+
+---
+
+## 6) Bilde og video: en reell skillelinje
+
+ChatGPT har bildegenerering (og i noen abonnement også video via Sora). Claude har ikke bildegenerering eller video på samme måte. Dette er ofte den mest praktiske grunnen til å beholde ChatGPT i en «to-verktøy»-arbeidsflyt.
+
+ChatGPT har også **Advanced Voice Mode** – en samtalegrensesnitt der du snakker direkte med modellen i sanntid. Claude har ingen tilsvarende funksjon per i dag.
+
+**GPT Store og Custom GPTs:** ChatGPT har en markedsplass der andre har bygd spesialiserte GPT-er du kan ta i bruk direkte. Claude har ikke en tilsvarende markedsplass – men du kan bygge lignende oppsett selv via Projects med egne instrukser og opplastede dokumenter.
+
+---
+
+## 7) Steg-for-steg migrering (praktisk)
+
+Dette er en ryddig rekkefølge:
+
+1. **Opprett konto i Claude**
+2. **Kopier Custom Instructions** fra ChatGPT til Claude sin profilinnstilling («Profile Preferences»)
+3. **Importer Memory** via [claude.com/import-memory](https://claude.com/import-memory)
+4. **Gjenopprett Custom GPTs** som Claude Projects (kopier instruksene, last opp kunnskapsfiler på nytt)
+5. **Bruk litt tid på å lære Artifacts-arbeidsflyten**, særlig hvis du bruker Canvas mye i dag
+6. **Kjør en 30-dagers test** der du bevisst ruter typiske oppgaver til Claude først, og noter hva du likevel går til ChatGPT for
+
+---
+
+## 8) Anbefalingen som faktisk tåler praksis
+
+De fleste erfarne brukere ender ikke med et «fullt bytte». De ender med en arbeidsdeling.
+
+Et enkelt rutemønster som fungerer i praksis:
+
+- Bilde/video, Tasks, agent-arbeid i nettleser, voice → ChatGPT
+- Lange tekster, tunge dokumenter, «store leveranser» i Artifacts, mer synlig resonnering → Claude
+- Research/Deep Research → begge fungerer, men med litt ulik tilnærming
+
+Målet er ikke lojalitet til en plattform.
+Målet er bedre arbeid – med færre friksjonspunkter.
+
+---
+
+## Avgrensning: Claude Code og Cowork
+
+Denne artikkelen dekker Claude slik de fleste møter det gjennom claude.ai og standard abonnementer. Men det er verdt å nevne to produkter vi ikke har gått i dybden på – fordi de løfter Claude til et helt annet nivå.
+
+**Claude Code** er et verktøy der Claude opererer direkte i terminalen på maskinen din. Det betyr at Claude ikke bare svarer på spørsmål, men faktisk kan lese filer, skrive kode, kjøre kommandoer og jobbe med hele prosjekter – autonomt og over tid. Claude Code har det siste halvåret tatt av på nett, og det er ikke tilfeldig.
+
+Den praktiske terskelen er at det kjøres i et terminalvindu, noe som kan virke komplisert og skummelt hvis du aldri har vært borti det. Men terminalen er i praksis bare et tekstvindu – og etter litt eksponering, gjerne via et kurs, er det mange ikke-utviklere som oppdager at det ikke er så mystisk som det ser ut. Claude Code er ikke et verktøy bare for utviklere. Det er et verktøy for alle som er villige til å senke skuldrene litt foran et svart skjermbilde.
+
+Med Claude Code i verktøybeltet snakker vi om helt andre muligheter enn det denne guiden dekker.
+
+**Cowork** er Anthropics desktop-verktøy for å automatisere fil- og oppgavehåndtering – beregnet på ikke-utviklere som ønsker å sette Claude til å jobbe mer selvstendig på maskinen sin, uten å gå veien om terminalen.
+
+En full sammenligning mellom ChatGPT (inkludert agent-funksjoner) og Claude Code / Cowork krever en egen gjennomgang, særlig knyttet til:
+
+- API-tilgang og modellvalg
+- Integrasjoner og MCP
+- Utviklerverktøy og arbeidsflyt
+- Sikkerhet og organisasjonskontroll
+
+Vurderer du AI som en del av utviklingsløpet eller organisasjonsarkitekturen – ikke bare som et skrive- og analyseverktøy – bør disse funksjonene stå øverst på lista.
+
+---
+
+*Martin Smestad Hansen*, Smest AS

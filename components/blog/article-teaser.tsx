@@ -52,10 +52,10 @@ export function ArticleTeaser({ post, variant = "small" }: ArticleTeaserProps) {
   }
 
   return (
-    <article className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors h-full flex flex-col">
+    <article className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors h-full flex flex-col">
       <Link href={`/ressurser/${post.slug}`} className="block flex-1 flex flex-col">
         {post.image ? (
-          <div className="relative aspect-[16/10] overflow-hidden">
+          <div className="relative aspect-[16/9] overflow-hidden">
             <Image
               src={post.image || "/placeholder.svg"}
               alt={post.imageAlt || post.title}
@@ -64,20 +64,20 @@ export function ArticleTeaser({ post, variant = "small" }: ArticleTeaserProps) {
             />
           </div>
         ) : (
-          <div className="aspect-[16/10] bg-muted flex items-center justify-center">
+          <div className="aspect-[16/9] bg-muted flex items-center justify-center">
             <span className="text-muted-foreground text-sm">Ingen bilde</span>
           </div>
         )}
-        <div className="p-5 flex-1 flex flex-col">
-          <time className="text-xs text-muted-foreground">{formattedDate}</time>
-          <h3 className="text-lg font-semibold mt-2 mb-2 group-hover:text-primary transition-colors text-balance">
+        <div className="p-6 sm:p-8 flex-1 flex flex-col">
+          <time className="text-sm text-muted-foreground">{formattedDate}</time>
+          <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-3 group-hover:text-primary transition-colors text-balance">
             {post.title}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1 text-pretty">
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4 flex-1 text-pretty">
             {post.excerpt}
           </p>
           <span className="inline-flex items-center gap-2 text-sm font-medium text-primary mt-auto">
-            Les mer
+            Les artikkelen
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </span>
         </div>
