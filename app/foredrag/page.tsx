@@ -118,7 +118,7 @@ export default function ForedragPage() {
             </div>
             <div className="relative aspect-square lg:aspect-[4/5] overflow-hidden rounded-lg bg-muted">
               <Image
-                src="/images/martin-portrait.jpg"
+                src="/images/martin-portrait.webp"
                 alt="Martin Smestad Hansen holder foredrag"
                 fill
                 className="object-cover"

@@ -143,7 +143,7 @@ export function HeroSection() {
           </div>
 
           <div className="relative aspect-square lg:aspect-[4/5] overflow-hidden rounded-lg bg-muted">
-            <img src="/images/martin-portrait.jpg" alt="Martin Smestad Hansen" className="h-full w-full object-cover" />
+            <img src="/images/martin-portrait.webp" alt="Martin Smestad Hansen" className="h-full w-full object-cover" />
           </div>
         </div>
       </div>

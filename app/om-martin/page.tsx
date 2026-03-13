@@ -31,7 +31,7 @@ export default function OmMartinPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="relative aspect-square lg:aspect-[4/5] overflow-hidden rounded-lg bg-muted">
               <Image
-                src="/images/martin-portrait.jpg"
+                src="/images/martin-portrait.webp"
                 alt="Martin Smestad Hansen"
                 fill
                 className="object-cover"
@@ -126,7 +126,7 @@ export default function OmMartinPage() {
               email: "martin@smest.no",
               telephone: "+4792647314",
               url: "https://smest.no/om-martin",
-              image: "https://smest.no/images/martin-portrait.jpg",
+              image: "https://smest.no/images/martin-portrait.webp",
               worksFor: {
                 "@type": "Organization",
                 "@id": "https://smest.no/#organization",
