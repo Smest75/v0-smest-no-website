@@ -1,5 +1,11 @@
 # Smest-no-website
 
+This is my company site. Made with v0 and Claude Code.
+Super snappy next.js and highly AEO-optimized.
+No CMS other than your gen AI companions!
+
+–-
+
 *Automatically synced with your [v0.app](https://v0.app) deployments*
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/martin-smestnos-projects/v0-smest-no-website)
