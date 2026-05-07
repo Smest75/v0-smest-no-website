@@ -1,8 +1,8 @@
 # Smest-no-website
 
 This is my company site. Made with v0 and Claude Code.
-Super snappy next.js and highly AEO-optimized.
-No CMS other than your gen AI companions!
+Super snappy next.js and highly AEO-optimized. Schema.org, responsive, WCAG2.1-ish.
+No CMS other than my gen AI companions!
 
 –-
 
