@@ -10,6 +10,9 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
+  verification: {
+    google: "Xe6atORkRaoONlTSKescQDogi1WNmadQiB6Vz5-pR-A",
+  },
   title: "Smest Rådgivning – Praktisk KI-rådgivning for SMB og organisasjoner",
   description:
     "Praktisk rådgivning og opplæring i bruk av kunstig intelligens for SMB-er, organisasjoner og ledere. 25 års erfaring med teknologi og kommunikasjon.",
@@ -96,6 +99,14 @@ export default function RootLayout({
                     "@id": "https://smest.no/#organization",
                   },
                   inLanguage: "nb-NO",
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: {
+                      "@type": "EntryPoint",
+                      urlTemplate: "https://smest.no/ressurser?q={search_term_string}",
+                    },
+                    "query-input": "required name=search_term_string",
+                  },
                 },
                 {
                   "@type": "Person",
