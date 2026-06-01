@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, RefreshCw } from "lucide-react"
 import type { BlogPost } from "@/lib/blog"
 
 interface ArticleListItemProps {
@@ -13,6 +13,16 @@ export function ArticleListItem({ post }: ArticleListItemProps) {
     day: "numeric",
   })
 
+  const formattedUpdatedAt = post.updatedAt
+    ? new Date(post.updatedAt).toLocaleDateString("nb-NO", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })
+    : null
+
+  const showUpdatedDate = formattedUpdatedAt && formattedUpdatedAt !== formattedDate
+
   return (
     <article className="group py-4 border-b border-border last:border-b-0">
       <Link
@@ -25,9 +35,16 @@ export function ArticleListItem({ post }: ArticleListItemProps) {
           </h3>
         </div>
         <div className="flex items-center gap-3 shrink-0">
-          <time className="text-sm text-muted-foreground hidden sm:block">
-            {formattedDate}
-          </time>
+          {showUpdatedDate ? (
+            <span className="inline-flex items-center gap-1 text-sm text-muted-foreground hidden sm:flex">
+              <RefreshCw className="h-3 w-3" />
+              {formattedUpdatedAt}
+            </span>
+          ) : (
+            <time className="text-sm text-muted-foreground hidden sm:block">
+              {formattedDate}
+            </time>
+          )}
           <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
         </div>
       </Link>

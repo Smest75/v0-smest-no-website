@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, RefreshCw } from "lucide-react"
 import type { BlogPost } from "@/lib/blog"
 
 interface ArticleTeaserProps {
@@ -14,6 +14,16 @@ export function ArticleTeaser({ post, variant = "small" }: ArticleTeaserProps) {
     month: "long",
     day: "numeric",
   })
+
+  const formattedUpdatedAt = post.updatedAt
+    ? new Date(post.updatedAt).toLocaleDateString("nb-NO", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : null
+
+  const showUpdatedDate = formattedUpdatedAt && formattedUpdatedAt !== formattedDate
 
   if (variant === "large") {
     return (
@@ -34,7 +44,18 @@ export function ArticleTeaser({ post, variant = "small" }: ArticleTeaserProps) {
             </div>
           )}
           <div className="p-6 sm:p-8">
-            <time className="text-sm text-muted-foreground">{formattedDate}</time>
+            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <time>{formattedDate}</time>
+              {showUpdatedDate && (
+                <>
+                  <span className="text-border">|</span>
+                  <span className="inline-flex items-center gap-1">
+                    <RefreshCw className="h-3 w-3" />
+                    Oppdatert {formattedUpdatedAt}
+                  </span>
+                </>
+              )}
+            </div>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-3 group-hover:text-primary transition-colors text-balance">
               {post.title}
             </h2>
@@ -69,7 +90,18 @@ export function ArticleTeaser({ post, variant = "small" }: ArticleTeaserProps) {
           </div>
         )}
         <div className="p-6 sm:p-8 flex-1 flex flex-col">
-          <time className="text-sm text-muted-foreground">{formattedDate}</time>
+          <div className="flex items-center gap-3 text-sm text-muted-foreground">
+            <time>{formattedDate}</time>
+            {showUpdatedDate && (
+              <>
+                <span className="text-border">|</span>
+                <span className="inline-flex items-center gap-1">
+                  <RefreshCw className="h-3 w-3" />
+                  Oppdatert {formattedUpdatedAt}
+                </span>
+              </>
+            )}
+          </div>
           <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-3 group-hover:text-primary transition-colors text-balance">
             {post.title}
           </h2>
