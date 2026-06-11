@@ -30,7 +30,7 @@ export function getAllPosts(): BlogPost[] {
       return getPostBySlug(slug)
     })
     .filter((post): post is BlogPost => post !== null)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort((a, b) => new Date(b.updatedAt || b.date).getTime() - new Date(a.updatedAt || a.date).getTime())
 
   return posts
 }
