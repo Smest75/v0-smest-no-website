@@ -91,16 +91,16 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <User className="h-4 w-4" />
                 <span>{post.author}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                <time dateTime={post.date}>{formattedDate}</time>
-              </div>
               {formattedUpdatedAt && formattedUpdatedAt !== formattedDate && (
                 <div className="flex items-center gap-2">
                   <RefreshCw className="h-4 w-4" />
                   <span>Oppdatert {formattedUpdatedAt}</span>
                 </div>
               )}
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                <time dateTime={post.date}>{formattedDate}</time>
+              </div>
             </div>
           </header>
 

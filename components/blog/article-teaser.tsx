@@ -43,13 +43,13 @@ export function ArticleTeaser({ post, variant = "small" }: ArticleTeaserProps) {
           )}
           <div className="p-6 sm:p-8">
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
-              <time>{formattedDate}</time>
               {formattedUpdatedAt && formattedUpdatedAt !== formattedDate && (
                 <span className="flex items-center gap-1">
                   <RefreshCw className="h-3 w-3" />
                   Oppdatert {formattedUpdatedAt}
                 </span>
               )}
+              <time>{formattedDate}</time>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-3 group-hover:text-primary transition-colors text-balance">
               {post.title}
@@ -86,13 +86,13 @@ export function ArticleTeaser({ post, variant = "small" }: ArticleTeaserProps) {
         )}
         <div className="p-6 sm:p-8 flex-1 flex flex-col">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
-            <time>{formattedDate}</time>
             {formattedUpdatedAt && formattedUpdatedAt !== formattedDate && (
               <span className="flex items-center gap-1">
                 <RefreshCw className="h-3 w-3" />
                 Oppdatert {formattedUpdatedAt}
               </span>
             )}
+            <time>{formattedDate}</time>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-3 group-hover:text-primary transition-colors text-balance">
             {post.title}
