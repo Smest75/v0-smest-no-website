@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-muted/30">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link
               href="/"
@@ -75,6 +75,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/baerekraft"
+                  className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                >
+                  Bærekraft
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/kontakt"
                   className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                 >
@@ -82,6 +90,22 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+
+          <div>
+            <h3 className="text-base font-semibold text-foreground mb-4">Miljøsertifisert</h3>
+            <Link href="/baerekraft" className="inline-block mb-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
+              <img src="/miljocert-logo.png" alt="Miljøcert-sertifisert" className="h-12 w-auto" />
+            </Link>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+              Smest AS er sertifisert gjennom Miljøcert. Sertifiseringen dokumenterer at virksomheten arbeider systematisk med miljøledelse, bærekraft og kontinuerlig forbedring.
+            </p>
+            <Link
+              href="/baerekraft"
+              className="text-sm text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+            >
+              Les mer om vårt miljø- og bærekraftsarbeid
+            </Link>
           </div>
 
           <div>

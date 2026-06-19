@@ -11,11 +11,11 @@ export function Header() {
   const pathname = usePathname()
 
   const navigation = [
-    { name: "Hjem", href: "/" },
     { name: "Tjenester", href: "/tjenester" },
     { name: "Foredrag", href: "/foredrag" },
     { name: "Om Martin", href: "/om-martin" },
     { name: "Ressurser", href: "/ressurser" },
+    { name: "Bærekraft", href: "/baerekraft" },
     { name: "Kontakt", href: "/kontakt" },
   ]
 
