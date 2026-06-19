@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const CALENDAR_URL =
   "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0-Zjvavs0QkkZqrmAvN8LxfxIK3Vxlg4IKclDx3hANaf6CaEPHkventvJqQM6XEkbGzqVj0S3C"
 
-const BASIC_SIGNUP_URL = "https://medlem.smest.no/basic-sign-up-form"
+const BASIC_SIGNUP_URL = "mailto:martin@smest.no?subject=Basic-registrering"
 
 const packages = [
   {
